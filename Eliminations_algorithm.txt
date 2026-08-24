@@ -1,0 +1,16 @@
+The algorithm we use to eliminate the polynomials work as follows:
+
+We first compute the power sums up to power 37 and then apply tests on the sums of the power sums of P and the ones of Q.
+
+The first test is based on Lemma 7 and just verifies that all odd power sums are non-negative.
+
+The second test uses the recursive formula to compute the number of points with minimal period k. Then using Lemma 16, one can compute some of the singularities. Since they all have different minimal periods, if the total number of singularities is to high, we can eliminate the polynomial. 
+
+
+
+For the eliminations in the genus 4 case, we also implimented other ways to count singularities.
+The first one is a direct application of Lemma 9 for some powers of f. By choosing appropriate powers, we can ensure all the singularities we find are different since they do not have the same minimal periods. We can also combine this with the second test since one finds singularities with odd mininal periods and the other finds singularities with even minimal periods.
+
+The fourth test is a direct application of Lemma 10 for some powers of f. Again, by choosing suitable powers, one can ensure the singularities found all have different minimal periods and this test can then be combined with the previous ones. In degree 18, since the only stratum possible in (2^12), we can improve the final estimate as stated in Remark 11. For degree 18 one can take 4r instead of 2r
+
+At the end we also implemented a test based of Lemma 18 which is pretty straight forward. We just eliminate all polynomials not fulfilling the bounds.
