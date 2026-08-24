@@ -1,0 +1,16 @@
+The algorithm used to achieve step 4 of the proof works as follows:
+
+Remark: In practice, we first do step 6 and use some of the results to accelerate step 4 algorithm.
+
+We start by computing the bounds on the power sums of the polynomials by using the Corollary 5.3 of Liechti and Strenner [9].
+Since we already computed the list of polynomials Q, we can choose better lower bounds than the ones gives in Corollary 5.3. For each odd power sum p_i, we choose the lower bounds to be 
+-max(q_i), where q_i is the corresponding power sum for a Polynomial Q and the maximum is taken over all polynomials Q. We can do this since by Lemma 7, the sum of the power sums of P and Q must be non-negative. Hence, if the power sums of P are smaller than minus the biggest corresponding power sum among the polynomials Q, the sum will be negative. 
+
+For each combination of power sums we then compute the associated coefficients using the Newton's formula. We save time by only going through the combinations that will give integer coefficients. To do so, we find the equivalence class modulo n of n-th power sums that give integer coefficient c_n. The equivalence class depends on the power sums with lower indices. We also only compute half the coefficients. This is sufficient since the polynomials must be skew-reciprocal, hence the first half of coefficients determines the other half. We then check wether the maximum root of the obtained polynomial is real, positive (in fact we check if it is bigger than 1+log(2)/4d, with d the degree of the polynomial; if it is smaller than this value, we know by Dimitrov arXiv : 1912.12545 that the polynomial is cyclotomic, hence to be eliminated), smaller than the candidate dilatation and unique. If this is the case, we push the polynomial in a list, otherwise we forget it.
+
+We then manually eliminated some non-primitve polynomials that cleary the previous test because of numerical errors and error margins we introduced.
+
+
+
+The algorithm for the 6th step work similarly as above.
+The only differences are that we do not choose better lower bounds on the power sums, we just take the ones of Corollary 5.3 of [9] and we only check wether the maximal root is smaller in module than the candidate dilatation.
