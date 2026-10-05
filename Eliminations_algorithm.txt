@@ -4,7 +4,7 @@ We first compute the power sums up to power 37 and then apply tests on the sums 
 
 The first test is based on Lemma 7 and just verifies that all odd power sums are non-negative.
 
-The second test uses the recursive formula to compute the number of points with minimal period k. Then using Lemma 16, one can compute some of the singularities. Since they all have different minimal periods, if the total number of singularities is to high, we can eliminate the polynomial. 
+The second test uses the recursive formula to compute the number of points with minimal period k. Then using Lemma 15, one can compute some of the singularities. Since they all have different minimal periods, if the total number of singularities is to high, we can eliminate the polynomial. 
 
 
 
